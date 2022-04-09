@@ -18,7 +18,7 @@ class TaskTitle extends StatelessWidget{
       ),
       trailing: Checkbox(
         activeColor: Colors.lightBlueAccent,
-          value:isChecked,
+        value:isChecked,
         onChanged: checkboxCallback,
       ),
     );
