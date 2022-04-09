@@ -5,8 +5,13 @@ class TaskTitle extends StatelessWidget{
   final bool isChecked;
   final String taskTitle;
   final Function checkboxCallback;
+  final Function removeTask;
 
-  TaskTitle({this.isChecked,this.taskTitle,this.checkboxCallback});
+  TaskTitle(
+      {
+        this.isChecked,this.taskTitle,
+        this.checkboxCallback,this.removeTask
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +19,18 @@ class TaskTitle extends StatelessWidget{
       title: Text(
         taskTitle,
         style: TextStyle(
-            decoration: isChecked ? TextDecoration.lineThrough : null),
+            decoration: isChecked ? TextDecoration.lineThrough : TextDecoration.none,
+        ),
       ),
-      trailing: Checkbox(
+      leading: Checkbox(
         activeColor: Colors.lightBlueAccent,
-        value:isChecked,
+        value: isChecked,
         onChanged: checkboxCallback,
+      ),
+      trailing: IconButton(
+        icon: Icon(Icons.delete),
+        color: Colors.grey,
+        onPressed: removeTask,
       ),
     );
   }
