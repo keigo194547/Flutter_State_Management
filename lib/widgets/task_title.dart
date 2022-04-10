@@ -31,6 +31,7 @@ class TaskTitle extends StatelessWidget{
         icon: Icon(Icons.delete),
         color: Colors.grey,
         onPressed: removeTask,
+
       ),
     );
   }

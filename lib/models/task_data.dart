@@ -32,7 +32,10 @@ class TaskData extends ChangeNotifier{
   }
 
   void deleteTask(Task task){
-    _tasks.remove(tasks);
+
+    _tasks = _tasks..remove(task);
+    // カスケード
+    //
     notifyListeners();
   }
 
